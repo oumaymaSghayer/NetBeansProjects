@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+<title> Les règles de navigation </title>
+</h:head>
+<h:body>
+<h3> Navigation </h3>
+<hr/>
+<h:form>
+    <h:commandButton action="page2" value="page2">
+    </h:commandButton>
+</h:form>
+<h:form>
+<h3>Utilisation: Managed Bean</h3>
+    <h:commandButton action="#{navigationController.moveToPage1}" value="Page1">
+    </h:commandButton>
+</h:form>
+<h:form>
+<h3> Navigation Conditionelle</h3>
+<!-- Add code Here -->
+  <h:commandLink action="#{navigationController.showPage}" value="page1">
+      <f:param name="pageId" value="1"> </f:param> 
+  </h:commandLink>
+  <h:outputText value="&#160;"/>
+  
+  <h:commandLink action="#{navigationController.showPage}" value="page2">
+      <f:param name="pageId" value="2"></f:param> 
+  </h:commandLink>
+  <h:outputText value="&#160;"/>
+
+  <h:commandLink action="#{navigationController.showPage}" value="Home">
+      <f:param name="pageId" value="3"></f:param> 
+  </h:commandLink>
+ 
+<hr/>
+</h:form>
+<h:form>
+<h3> "Form Action" Navigation</h3>
+<!-- Add code Here -->
+  <h:commandLink action="page1" value="Page1"></h:commandLink>
+    <h:outputText value="&#160;"/>
+     <h:commandLink action="#{navigationController.processPage2}" value="Page2">
+      
+  </h:commandLink> 
+  
+
+<hr/>
+</h:form>
+</h:body>
+</html>

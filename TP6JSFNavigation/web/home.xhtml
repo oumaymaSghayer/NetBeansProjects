@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core" >
+<h:head>
+<title> Les règles de navigation </title>
+</h:head>
+<h:body>
+<h3> Navigation </h3>
+<hr/>
+<h:form>
+<h3>Utilisation: JSF outcome</h3>
+<!-- Add code Here -->
+<h:commandButton action="page2" value="page2"/>
+<!-- ---- -->
+</h:form>
+<h:form>
+<h3>Utilisation: Managed Bean</h3>
+<!-- Add code Here -->
+ <h:commandButton action="#{navigationController.moveToPage1}" value="Page1"/>
+ <!-- ---- -->
+</h:form>
+<h:form>
+<h3> Navigation Conditionelle</h3>
+<!-- Add code Here -->
+<h:commandLink action="#{navigationController.showPage}" value="page1">
+      <f:param name="pageId" value="1"> </f:param> 
+  </h:commandLink>
+  <h:outputText value="&#160;"/>
+  
+  <h:commandLink action="#{navigationController.showPage}" value="page2">
+      <f:param name="pageId" value="2"> </f:param> 
+  </h:commandLink>
+  <h:outputText value="&#160;"/>
+   <!-- ---- -->
+<hr/>
+</h:form>
+<h:form>
+<h3> "Form Action" Navigation</h3>
+<!-- Add code Here -->
+<hr/>
+</h:form>
+</h:body>
+</html>
